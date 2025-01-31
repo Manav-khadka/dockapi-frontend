@@ -1,5 +1,5 @@
 const ApiEndpoints = {
-    DEPLOY_PROJECT: '/deploy-project',
+    UPLOAD_PROJECT: '/upload-project',
 };
 
 export default ApiEndpoints;
