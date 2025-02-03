@@ -1,5 +1,5 @@
 "use client";
-import ApiManager from "@/services/ApiManager";
+import { uploadProject } from "@/services/upload";
 import Image from "next/image";
 import React from "react";
 import { JSX } from "react";
@@ -28,12 +28,8 @@ export default function Home() : JSX.Element {
     }
     setDeploying(true);
     try {
-      const response = await ApiManager.deployProject({ title : projectName, github_link: githubUrl });
-      if (response.status !== 200) {
-        throw new Error("Failed to deploy project.");
-      }
-      console.log("Project deployed successfully.",response);
-      setSlug(response);
+      const response =await uploadProject({ projectName:projectName, githubUrl:githubUrl });  ;
+      setSlug(response.data.slug);
       setDeployed(true);
     } catch (e) {
       setError(true);

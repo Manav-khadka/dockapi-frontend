@@ -1,4 +1,4 @@
 type ProjectData = {
-    title: string;
-    github_link: string;
+    projectName: string;
+    githubUrl: string;
 }
