@@ -1,6 +1,5 @@
 "use client";
 import { uploadProject } from "@/services/upload";
-import Image from "next/image";
 import React from "react";
 import { JSX } from "react";
 
@@ -33,6 +32,7 @@ export default function Home() : JSX.Element {
       setDeployed(true);
     } catch (e) {
       setError(true);
+      console.error(e);
     } finally {
       setDeploying(false);
     }
@@ -65,6 +65,8 @@ export default function Home() : JSX.Element {
           disabled={deploying}
         >
           {deploying ? "Deploying..." : "Deploy"}
+          {deployed && <span className="text-green-500">Deployed! {slug}</span>}
+          {error && <span className="text-red-500">Error!</span>}
         </button>
       </div>
     </div>
