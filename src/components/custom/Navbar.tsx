@@ -3,9 +3,10 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { Menu, X, Command, ChevronDown, ChevronUp, Github, Sun, Moon } from "lucide-react";
+import { Menu, X, ChevronDown, ChevronUp, Github, Sun, Moon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 
 const navigation = [
   {
@@ -13,7 +14,7 @@ const navigation = [
     href: "#features",
     submenu: [
       { name: "Analytics", href: "#analytics" },
-      { name: "Deployments", href: "#deployments" },
+      { name: "AI Suggestions", href: "#aisuggestions" },
       { name: "Collaboration", href: "#collaboration" },
     ],
   },
@@ -81,7 +82,8 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Command className="h-6 w-6" />
+            {/* svg from public */}
+            <Image src="/dockapilogo.svg" alt="DockAPI Logo" width={40} height={40} />
             <span className="font-bold text-xl">DockAPI</span>
           </Link>
 
@@ -150,7 +152,7 @@ export default function Navbar() {
                 <Moon className="h-5 w-5" />
               )}
             </Button>
-            <Link href="https://github.com" target="_blank">
+            <Link href="https://github.com/Manav-khadka/dockapi-backend" target="_blank">
               <Button variant="ghost" size="icon">
                 <Github className="h-5 w-5" />
               </Button>
