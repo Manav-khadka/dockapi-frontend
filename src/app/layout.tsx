@@ -24,16 +24,16 @@ export const metadata: Metadata = {
     "DockAPI, Docker, API Hub, Cloud Platform, API Deployment, AI-powered Cloud, Unified API Management, Microservices, Cloud APIs, API Gateway",
   authors: [{ name: "Manav Khadka", url: "https://manavkhadka.com.np" }],
   creator: "Manav Khadka",
-  metadataBase: new URL("https://dockapi.vercel.app"), // or your custom domain
+  metadataBase: new URL("https://dockapi.manavkhadka.com.np"), // or your custom domain
   openGraph: {
     title: "DockAPI - AI-powered Unified Cloud Platform and API Hub",
     description:
       "DockAPI is a unified cloud platform and API Hub designed to simplify the deployment, scaling, and management of Docker-based projects and APIs.",
-    url: "https://dockapi.vercel.app", // your domain
+    url: "https://dockapi.manavkhadka.com.np", // your domain
     siteName: "DockAPI",
     images: [
       {
-        url: "https://dockapi.vercel.app/preview.png", // Update with your OG image
+        url: "https://dockapi.manavkhadka.com.np/dockapilogo.svg", // Update with your OG image
         width: 1200,
         height: 630,
         alt: "DockAPI Preview Image",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "DockAPI - AI-powered Unified Cloud Platform and API Hub",
     description:
       "DockAPI simplifies the deployment, scaling, and management of APIs and Docker-based projects.",
-    images: ["https://dockapi.vercel.app/preview.png"], // Your preview image
+    images: ["https://dockapi.manavkhadka.com.np/dockapilogo.svg"], // Your preview image
     creator: "@manavkhadka", // optional: your Twitter handle
   },
   icons: {
@@ -55,7 +55,6 @@ export const metadata: Metadata = {
     shortcut: "/dockapilogo.svg",
     apple: "/dockapilogo.svg",
   },
-  themeColor: "#000000",
   manifest: "/site.webmanifest", // optional, if you add PWA support
 };
 
