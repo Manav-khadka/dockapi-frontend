@@ -3,98 +3,81 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 const cards = [
-  {
-    image: "./dockapilogo.svg",
-    label: 'Code Quality'
-  },
-  {
-    image: "./dockapilogo.svg",
-    label: 'Problem Solving'
-  },
-  {
-    image: "./dockapilogo.svg",
-    label: 'Data Science'
-  },
-  {
-    image: "./dockapilogo.svg",
-    label: 'Cybersecurity'
-  },
- 
+    {
+        image: "/react.svg",
+    },
+    {
+        image: "/docker.svg",
+    },
+    {
+        image: "/html.svg",
+    },
+    {
+        image: "/nextjs.svg",
+    },
+    {
+        image: "/angular.svg",
+    },
+    {
+        image: "/fastapi.svg",
+    },
+    {
+        image: "/vuejs.svg",
+    },
 ];
 
 export const StackingIcons = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveIndex((current) => (current + 1) % cards.length);
-    }, 3000);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setActiveIndex((current) => (current + 1) % cards.length);
+        }, 3000);
 
-    return () => clearInterval(interval);
-  }, []);
+        return () => clearInterval(interval);
+    }, []);
 
-  return (
-    <div className="relative h-[400px] w-[300px]">
-      {cards.map(({ image, label }, index) => {
+    return cards.map(({ image }, index) => {
         const position = (index - activeIndex + cards.length) % cards.length;
         const isActive = position === 0;
         const isVisible = position < 3;
         const zIndex = cards.length - position;
-        
-        let translateY = position * 40;
+
+        let translateY = position * -18; // Adjust the vertical spacing between images
         let opacity = 1;
         let scale = 1;
-        
+        let filter = 'none';
+
         if (position === cards.length - 1) {
-          translateY = -80;
-          opacity = 0;
+            translateY = 20;
+            opacity = 0;
         } else if (position >= 3) {
-          opacity = 0;
-          translateY = 160;
+            opacity = 0;
+            translateY = 20;
         } else {
-          opacity = 1 - (position * 0.2);
-          scale = isActive ? 1 : 1 - (position * 0.05);
+            opacity = 1;
+            scale = isActive ? 1 : 1 - (position * 0.2); // Adjusted scale for smaller back images
+            filter = isActive ? 'none' : 'blur(1px)'; // Apply blur to non-active images
         }
 
         return (
-          <div
-            key={index}
-            className="absolute left-0 top-0 w-full transition-all duration-700 ease-in-out"
-            style={{
-              transform: `translateY(${translateY}px)`,
-              opacity: isVisible ? opacity : 0,
-              zIndex,
-            }}
-          >
             <div
-              className="rounded-2xl shadow-lg transition-all duration-700 aspect-square flex flex-col items-center justify-center overflow-hidden"
-              style={{ 
-                transform: `
-                  perspective(1000px) 
-                  rotateX(${position * 3}deg)
-                  scale(${scale})
-                `,
-                transformOrigin: 'center center',
-              }}
+                key={index}
+                className="absolute transition-transform duration-500 ease-out transform-gpu"
+                style={{
+                    transform: `translateY(${translateY}px) scale(${scale})`,
+                    opacity: isVisible ? opacity : 0,
+                    zIndex,
+                    filter,
+                }}
             >
-              <div className="relative w-full h-full">
                 <Image 
-                  src={image} 
-                  alt={label}
-                  width={200}
-                  height={200}
-                  className="w-full h-full object-cover"
+                    src={image} 
+                    alt={`Card ${index + 1}`}
+                    width={80}
+                    height={80}
                 />
-                <div 
-                  className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6"
-                >
-                  <span className="text-white font-medium text-xl">{label}</span>
-                </div>
-              </div>
             </div>
-          </div>
         );
-      })}
-    </div>
-  );
+    });
 };

@@ -3,23 +3,23 @@ import { ArrowRight } from "lucide-react";
 import { StackingIcons } from "@/components/custom/StackingIcons";
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center">
+    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-10 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
+      <main className="flex flex-col gap-8 row-start-2 mb-100 items-center">
         <StackingIcons />
       <div className="
+      mt-20
       box-border
       border-0
       antialiased
-      m-0
       text-[44px]
       leading-[44px]
       tracking-[-0.01em]
       font-semibold
       text-[hsl(var(--fg-primary)/1)]
-      max-w-[500px] pt-16 text-center text-title-1 min-720:max-w-[500px] min-720:text-spotlight min-1280:max-w-[700px] min-1280:text-showcase
-    ">
+      max-w-[500px] pt-8 text-center text-title-1 min-720:max-w-[500px] min-720:text-spotlight min-1280:max-w-[700px] min-1280:text-showcase
+        ">
        Launch at the speed of thought.
-    </div>
+        </div>
     <div className="max-w-[500px] text-center text-title-1 text-[hsl(var(--fg-primary)/0.8)] min-720:max-w-[500px] min-720:text-spotlight min-1280:max-w-[700px] min-1280:text-showcase">
     DockAPI empowers developers to deploy and scale applications effortlessly with AI-optimized infrastructure.
 
