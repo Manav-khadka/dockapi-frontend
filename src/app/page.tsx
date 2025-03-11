@@ -18,7 +18,7 @@ export default function Home() {
       text-[hsl(var(--fg-primary)/1)]
       max-w-[500px] pt-8 text-center text-title-1 min-720:max-w-[500px] min-720:text-spotlight min-1280:max-w-[700px] min-1280:text-showcase
         ">
-       Launch at the speed of thought.
+       Code to Cloud—Fast, Flawless, Fail-Safe with AI.
         </div>
     <div className="max-w-[500px] text-center text-title-1 text-[hsl(var(--fg-primary)/0.8)] min-720:max-w-[500px] min-720:text-spotlight min-1280:max-w-[700px] min-1280:text-showcase">
     DockAPI empowers developers to deploy and scale applications effortlessly with AI-optimized infrastructure.
