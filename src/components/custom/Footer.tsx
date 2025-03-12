@@ -112,26 +112,31 @@ export default function Footer() {
             <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
               <div className="flex items-center space-x-4">
                 <Link
-                  href="#"
+                  href="https://github.com/manav-khadka"
                   className="text-muted-foreground hover:text-foreground"
+                  target="_blank"
+                  
                 >
                   <Github className="h-5 w-5" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://twitter.com/themanavkhadka"
                   className="text-muted-foreground hover:text-foreground"
+                  target="_blank"
                 >
                   <Twitter className="h-5 w-5" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.linkedin.com/in/manav-khadka/"
                   className="text-muted-foreground hover:text-foreground"
+                  target="_blank"
                 >
                   <Linkedin className="h-5 w-5" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.youtube.com/@manav-khadka"
                   className="text-muted-foreground hover:text-foreground"
+                  target="_blank"
                 >
                   <Youtube className="h-5 w-5" />
                 </Link>
@@ -143,9 +148,9 @@ export default function Footer() {
                 <Link href="#" className="hover:text-foreground">
                   Privacy
                 </Link>
-                <Link href="#" className="hover:text-foreground">
+                {/* <Link href="#" className="hover:text-foreground">
                   Cookies
-                </Link>
+                </Link> */}
                 <Link href="#" className="hover:text-foreground">
                   License
                 </Link>
