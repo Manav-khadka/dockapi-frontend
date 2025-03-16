@@ -7,7 +7,7 @@ export default async function Name() {
  
   return (
     <div>
-        <h1>{session.accessToken} and {session.internalJwt}</h1>
+        <h1>{session.user.name} </h1>
     </div>
   )
 }
