@@ -32,7 +32,7 @@ export const StackingIcons = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             setActiveIndex((current) => (current + 1) % cards.length);
-        }, 3000);
+        }, 1000);
 
         return () => clearInterval(interval);
     }, []);
@@ -49,11 +49,11 @@ export const StackingIcons = () => {
         let filter = 'none';
 
         if (position === cards.length - 1) {
-            translateY = 20;
+            translateY = 10;
             opacity = 0;
         } else if (position >= 3) {
             opacity = 0;
-            translateY = 20;
+            translateY = 10;
         } else {
             opacity = 1;
             scale = isActive ? 1 : 1 - (position * 0.2); // Adjusted scale for smaller back images
