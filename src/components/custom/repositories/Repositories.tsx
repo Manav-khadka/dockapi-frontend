@@ -1,4 +1,6 @@
+"use client";
 import React from 'react'
+import GithubRepos from '@/components/custom/repositories/GithubRepos';
 
 type RepositoriesProps = {
   selected: string;
@@ -11,9 +13,10 @@ export default function Repositories({ selected }: RepositoriesProps) {
       <p className="text-gray-700">{selected}</p>
 
       {/* Render Repositories list based on selected */}
-      {/* {selected === "github" && <GithubRepos />}
-          {selected === "gitlab" && <GitlabRepos />}
+       {selected === "github" && <GithubRepos />}
+          {/* {selected === "gitlab" && <GitlabRepos />}
           {selected === "bitbucket" && <BitbucketRepos />} */}
+          
     </div>
   );
 }
