@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import SegmentedControl from "@/components/custom/SegmentedControl";
+import SignIn from "@/components/sign-in";
 
 export default function Deploy() {
   
@@ -10,7 +11,7 @@ export default function Deploy() {
                    
         <SegmentedControl /> 
              
-                 
+                 <SignIn />
                  
       </main>
     </div>
