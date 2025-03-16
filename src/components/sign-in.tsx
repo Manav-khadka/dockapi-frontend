@@ -5,7 +5,7 @@ export default function SignIn() {
     <form
       action={()=> signInWithGithub()}
     >
-      <button type="submit">Signin with GitHub</button>
+      <button type="submit">Login</button>
     </form>
   )
 } 
